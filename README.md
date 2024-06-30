@@ -5,7 +5,7 @@
 To run the project, you'll need to have the following Python packages installed. You can install them using the following command:
 
 ```bash
-pip install scikit-learn pandas numpy statsmodels matplotlib seaborn plotly prophet
+pip install numpy pandas matplotlib seaborn plotly statsmodels scikit-learn prophet
 ```
 
 ## About Dataset
@@ -55,6 +55,19 @@ On visual inspection of the plots provided by the Prophet library we make these 
 - **Reporting Delays:** Delays in data reporting, especially over weekends, might result in a surge of reported cases at the beginning of the new week.
 - **Weekend Gatherings:** Social activities, gatherings, or events over the early weekend might contribute to increased exposure and transmission, leading to higher reported cases.
 - **Workweek Caution:** Individuals might exhibit more caution and adherence to safety measures early in the workweek, potentially influencing lower reported cases. However, as the week progresses, there appears to be a relaxation in this vigilance, potentially leading to a more casual approach to safety protocols.
+
+### Model Performance
+
+The Facebook Prophet model was used to forecast COVID-19 trends. The model's performance was evaluated using three key metrics: 
+
+- **MAPE:** Indicates the model's prediction error as a percentage. Lower values indicate better accuracy.
+- **RMSE:** Measures the standard deviation of prediction errors. Lower values indicate better performance.
+- **R² Score:** Indicates the proportion of variance explained by the model. Higher values indicate better performance.
+
+The results are summarized below:
+
+The model showed strong performance in predicting DEATHS, with an R² score of 0.8974, but had lower performance in predicting CONFIRMED and RECOVERED cases, indicating room for improvement. The ACTIVE cases prediction was moderate, with an R² score of 0.4219. Overall, these metrics suggest the model captures the general trends but may miss some variability, especially in CONFIRMED and RECOVERED cases.
+
 
 ## Reference
 [COVID-19 Data Repository](https://github.com/CSSEGISandData/COVID-19) by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University: On March 10, 2023, the Johns Hopkins Coronavirus Resource Center ceased its collecting and reporting of global COVID-19 data. For updated cases, deaths, and vaccine data please visit the following sources:<br>
